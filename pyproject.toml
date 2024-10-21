@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fk"
+version = "0.1.0"
+description = "A simple binary installer and manager"
+readme = "README.md"
+authors = [{ name = "Zeev Rotshtein", email = "zeevro@gmail.com" }]
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+fk = "fk:main"
+
+[tool.ruff]
+line-length = 250
+output-format = "concise"
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "W191",  # conflicts with formatter
+    "E111",  # conflicts with formatter
+    "E114",  # conflicts with formatter
+    "E117",  # conflicts with formatter
+    "D206",  # conflicts with formatter
+    "D300",  # conflicts with formatter
+    "Q000",  # conflicts with formatter
+    "Q001",  # conflicts with formatter
+    "Q002",  # conflicts with formatter
+    "Q003",  # conflicts with formatter
+    "COM812",  # conflicts with formatter
+    "COM819",  # conflicts with formatter
+    "ISC001",  # conflicts with formatter
+    "ISC002",  # conflicts with formatter
+    "E501",  # line-too-long - see formatter documentation
+
+    "D1",  # pydocstyle - Missing docstring
+]
+
+[tool.ruff.lint.isort]
+force-sort-within-sections = true
+lines-after-imports = 2
+
+[tool.ruff.format]
+quote-style = "single"
